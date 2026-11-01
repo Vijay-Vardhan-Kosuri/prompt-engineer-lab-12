@@ -1,0 +1,69 @@
+/home/workdir/artifacts/rag_pipeline/rag_indexing_pipeline.py:10: DeprecationWarning: `langchain-community` is being sunset and is no longer actively maintained. See https://github.com/langchain-ai/langchain-community/issues/674 for details and migration guidance toward standalone integration packages.
+  from langchain_community.embeddings import HuggingFaceEmbeddings
+/home/workdir/artifacts/rag_pipeline/rag_indexing_pipeline.py:67: LangChainDeprecationWarning: The class `HuggingFaceEmbeddings` was deprecated in LangChain 0.2.2 and will be removed in 1.0. An updated version of the class exists in the `langchain-huggingface package and should be used instead. To use it run `pip install -U `langchain-huggingface` and import as `from `langchain_huggingface import HuggingFaceEmbeddings``.
+  embeddings = HuggingFaceEmbeddings(
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+======================================================================
+RAG Data Indexing Pipeline – Climate Change Sample
+======================================================================
+
+Number of chunks created: 11
+----------------------------------------
+  Chunk 1: Climate change is one of the most pressing challenges facing humanity in the 21s...
+  Chunk 2: such as the burning of fossil fuels, deforestation, and industrial processes tha...
+  Chunk 3: The effects of climate change are already visible and are projected to intensify...
+  Chunk 4: Coastal cities and low-lying island nations face increased risks of flooding and...
+  Chunk 5: Ecosystems around the world are under stress. Coral reefs are bleaching due to w...
+  Chunk 6: Agriculture is particularly vulnerable: changing precipitation patterns and high...
+  Chunk 7: Human health is also at risk. Heat-related illnesses, the spread of vector-borne...
+  Chunk 8: Vulnerable populations, including the poor, elderly, and those in developing cou...
+  Chunk 9: Mitigation and adaptation strategies are essential. Transitioning to renewable e...
+  Chunk 10: protecting and restoring forests, and adopting sustainable agricultural practice...
+  Chunk 11: above pre-industrial levels, ideally to 1.5 degrees. Achieving these targets req...
+
+Building FAISS vector store with HuggingFace embeddings...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 6925.29it/s]
+Vector store ready.
+
+======================================================================
+Query: What are the effects of climate change?
+======================================================================
+Top 2 retrieved chunks:
+
+  Rank 1 | Relevance Score: 0.5168
+  Chunk: The effects of climate change are already visible and are projected to intensify. Rising global temperatures
+have caused glaciers and polar ice caps to melt at unprecedented rates, contributing to sea-level rise.
+
+  Rank 2 | Relevance Score: 0.4723
+  Chunk: Climate change is one of the most pressing challenges facing humanity in the 21st century.
+It refers to long-term shifts in temperatures and weather patterns, primarily driven by human activities
+
+======================================================================
+Query: How can we mitigate climate change?
+======================================================================
+Top 2 retrieved chunks:
+
+  Rank 1 | Relevance Score: 0.4342
+  Chunk: Mitigation and adaptation strategies are essential. Transitioning to renewable energy sources such as solar,
+wind, and hydroelectric power can significantly reduce greenhouse-gas emissions. Improving energy efficiency,
+
+  Rank 2 | Relevance Score: 0.4096
+  Chunk: Climate change is one of the most pressing challenges facing humanity in the 21st century.
+It refers to long-term shifts in temperatures and weather patterns, primarily driven by human activities
+
+======================================================================
+Query: Impact on human health and ecosystems
+======================================================================
+Top 2 retrieved chunks:
+
+  Rank 1 | Relevance Score: 0.3209
+  Chunk: Human health is also at risk. Heat-related illnesses, the spread of vector-borne diseases like malaria and dengue,
+and respiratory problems from air pollution linked to fossil-fuel combustion are expected to rise.
+
+  Rank 2 | Relevance Score: 0.3199
+  Chunk: Ecosystems around the world are under stress. Coral reefs are bleaching due to warmer ocean temperatures,
+forests are experiencing more wildfires, and many species are shifting their ranges or facing extinction.
+
+======================================================================
+Pipeline completed successfully.
+======================================================================
